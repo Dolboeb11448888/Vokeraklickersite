@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klicker - Зарабатывай кликами</title>
+    <style>
+        :root {
+            --android-blue: #1a73e8;
+            --android-light-blue: #8ab4f8;
+            --android-white: #ffffff;
+            --android-light-gray: #f5f5f5;
+            --android-dark-gray: #3c4043;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--android-light-gray);
+            color: var(--android-dark-gray);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--android-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--android-blue);
+        }
+
+        .earn-box {
+            background-color: var(--android-white);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .earn-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .earn-rate {
+            font-size: 24px;
+            color: var(--android-blue);
+            font-weight: 700;
+            margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        .download-btn {
+            background-color: var(--android-blue);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 115, 232, 0.3);
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .download-btn:hover {
+            background-color: #0d5bba;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26, 115, 232, 0.4);
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+
+        .feature {
+            flex-basis: 30%;
+            background-color: var(--android-white);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--android-blue);
+            margin-bottom: 15px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--android-dark-gray);
+        }
+
+        .feature-desc {
+            font-size: 16px;
+            color: var(--android-dark-gray);
+            opacity: 0.8;
+        }
+
+        footer {
+            background-color: var(--android-white);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            margin: 0 15px;
+            color: var(--android-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #0d5bba;
+            text-decoration: underline;
+        }
+
+        .copyright {
+            color: var(--android-dark-gray);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+            
+            .feature {
+                flex-basis: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .logo-text {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/80/1a73e8/ffffff?text=KL" alt="Klicker Logo">
+                <div class="logo-text">Klicker</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="earn-box">
+            <h1>Зарабатывай кликами!</h1>
+            <p>Простое приложение для заработка без вложений</p>
+            
+            <div class="earn-rate">
+                <span style="color: #1a73e8; font-weight: bold;">1750 кликов = 1₽</span>
+            </div>
+            
+            <button class="download-btn" id="downloadBtn">СКАЧАТЬ</button>
+            
+            <p>Быстрый вывод средств на карту или электронные кошельки</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Быстрый старт</h3>
+                <p class="feature-desc">Начните зарабатывать сразу после установки приложения</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3 class="feature-title">Гарантированные выплаты</h3>
+                <p class="feature-desc">Мы платим каждому пользователю без задержек</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">📈</div>
+                <h3 class="feature-title">Рост доходов</h3>
+                <p class="feature-desc">Ваш заработок увеличивается с каждым днем</p>
+            </div>
+        </div>
+
+        <div class="earn-box">
+            <h2>Как работает Klicker?</h2>
+            <p>1. Установите приложение на свой Android-смартфон</p>
+            <p>2. Открывайте приложение и кликайте по рекламным предложениям</p>
+            <p>3. Зарабатывайте деньги за каждый клик</p>
+            <p>4. Выводите средства удобным способом</p>
+            
+            <button class="download-btn" id="downloadBtn2">УСТАНОВИТЬ Klicker</button>
+        </div>
+
+        <div class="earn-box">
+            <h2>Отзывы пользователей</h2>
+            <p>"За неделю заработал 500₽, просто кликая по рекламе в свободное время!" - Иван</p>
+            <p>"Лучшее приложение для заработка без вложений. Вывод средств моментальный!" - Ольга</p>
+            <p>"Уже вывел более 5000₽ за месяц. Рекомендую всем!" - Алексей</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Политика конфиденциальности</a>
+                <a href="#" class="footer-link">Условия использования</a>
+                <a href="#" class="footer-link">Поддержка</a>
+            </div>
+            <div class="copyright">
+                © 2023 Klicker. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Обработка кнопок скачивания
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            window.location.href = 'https://www.rustore.ru/catalog/app/com.vokera.klicker';
+        });
+
+        document.getElementById('downloadBtn2').addEventListener('click', function() {
+            window.location.href = 'https://www.rustore.ru/catalog/app/com.vokera.klicker';
+        });
+
+        // Плавная прокрутка для всех ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</body>
+</html>
